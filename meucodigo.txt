@@ -1,1 +1,16 @@
 
+# Importa o módulo secrets para gerar números aleatórios seguros
+import secrets
+
+# Importa o módulo string e o renomeia como 's'
+import string as s
+
+# Importa a classe SystemRandom do módulo secrets e a renomeia como 'Sr'
+from secrets import SystemRandom as Sr
+
+# Cria uma instância da classe SystemRandom para geração de números aleatórios
+random = secrets.SystemRandom()
+
+# Gera uma senha aleatória de 8 caracteres
+# combinando letras maiúsculas e minúsculas, dígitos e pontuação
+print(''.join(Sr().choices(s.ascii_letters + s.digits + s.punctuation, k=8)))
